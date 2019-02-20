@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cash Converter</title>
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <h1>Convert Your Ca$h</h1>
+
+    <div id="app">
+      <label for="rate_select">Select a Currency</label>
+      <select v-on:change="rateSelect" id="rate_select" v-model="selectedRateIndex">
+        <option disable value>Select a currency..</option>
+        <option v-for="(rate, key) in currencyRates">{{key}}: {{rate}}</option>
+      </select>
+
+      <input type="text" />
+      <button>Convert</button>
+
+
+
+    </div>
+
+  </body>
+</html>
