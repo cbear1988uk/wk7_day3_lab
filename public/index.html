@@ -4,23 +4,31 @@
     <meta charset="utf-8">
     <title>Cash Converter</title>
     <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
   </head>
   <body>
     <h1>Convert Your Ca$h</h1>
 
     <div id="app">
-      <label for="rate_select">Select a Currency</label>
+      <label for="rate_select">Select a</label>
       <select v-on:change="rateSelect" id="rate_select" v-model="selectedRateIndex">
-        <option disable value>Select a currency..</option>
-        <option v-for="(rate, key) in currencyRates">{{key}}: {{rate}}</option>
+        <option disable value>Currency..</option>
+        <option v-for="(rate, key) in currencyRates" :value="key">{{key}}: {{rate}}</option>
       </select>
 
-      <input type="text" />
-      <button>Convert</button>
+      <div class="form-item">
+        <label for="inputCurrency"></label>
+        <input type="text" id="inputCurrency" v-model="inputCurrency" />
+        <button v-on:click="calculateInput">Convert</button>
+      </div>
 
+      <p>{{calculatedResult}}</p>
 
 
     </div>
+
+    <img src="./images/hotline_bling.gif" alt="">
 
   </body>
 </html>

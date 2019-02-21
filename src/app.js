@@ -6,7 +6,9 @@ window.addEventListener("DOMContentLoaded", () => {
     data: {
       currencyRates: [],
       selectedRateIndex: '',
-      selectedRate: null
+      selectedRate: null,
+      inputCurrency: 0,
+      calculatedResult: 0
     },
     mounted(){
       this.getRates()
@@ -19,6 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
       },
       rateSelect: function(){
         this.selectedRate = this.currencyRates[this.selectedRateIndex]
+      },
+      calculateInput: function(){
+        this.calculatedResult = (this.inputCurrency * this.selectedRate).toFixed(2)
       }
     }
   })
